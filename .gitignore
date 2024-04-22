@@ -1,0 +1,4 @@
+config/*
+.env
+certificate/*
+!certificate/some.pem

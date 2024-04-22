@@ -1,0 +1,18 @@
+version: '2'
+services:
+  postfix:
+    build: ./
+    expose:
+    - "25"
+    - "587"
+    - "465"
+    ports:
+      - "8025:25"
+      - "8587:587"
+      - "8465:465"
+    env_file:
+      - .env
+    restart: always
+    volumes:
+     - "/etc/localtime:/etc/localtime:ro"
+     - "./certificate:/etc/certificate:rw"
